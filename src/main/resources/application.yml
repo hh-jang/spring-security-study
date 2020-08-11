@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: local
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      format_sql: true
+      ddl-auto: create
+
+---
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_security
+    username: hhjang
+    password: hhjang1
+    driver-class-name: com.mysql.jdbc.Driver
+
+---
+server:
+  port: 58080

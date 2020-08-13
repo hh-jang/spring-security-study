@@ -1,4 +1,4 @@
-package com.hhjang.security.springsecuritystudy;
+package com.hhjang.security.springsecuritystudy.domain.user;
 
 import lombok.Data;
 
@@ -15,7 +15,7 @@ public class User {
 
     private String name;
 
-    User(String name) {
+    public User(String name) {
         this.name = name;
     }
 }

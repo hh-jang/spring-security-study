@@ -1,5 +1,7 @@
 package com.hhjang.security.springsecuritystudy;
 
+import com.hhjang.security.springsecuritystudy.domain.user.User;
+import com.hhjang.security.springsecuritystudy.domain.user.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

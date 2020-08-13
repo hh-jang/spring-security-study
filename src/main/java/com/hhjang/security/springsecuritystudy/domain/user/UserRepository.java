@@ -1,4 +1,4 @@
-package com.hhjang.security.springsecuritystudy;
+package com.hhjang.security.springsecuritystudy.domain.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

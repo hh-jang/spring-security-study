@@ -1,6 +1,6 @@
 package com.hhjang.security.springsecuritystudy.web;
 
-import com.hhjang.security.springsecuritystudy.UserRepository;
+import com.hhjang.security.springsecuritystudy.domain.user.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;

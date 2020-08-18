@@ -1,6 +1,8 @@
 package com.hhjang.security.springsecuritystudy.config.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hhjang.security.springsecuritystudy.domain.user.google.GoogleUser;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
@@ -14,6 +16,7 @@ import java.io.IOException;
 import java.util.Map;
 
 @Component
+@Slf4j
 public class GoogleAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
     private HttpSession httpSession;
     private ObjectMapper objectMapper;
@@ -25,6 +28,8 @@ public class GoogleAuthenticationSuccessHandler implements AuthenticationSuccess
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+        GoogleUser googleUser = objectMapper.convertValue(authentication.getDetails(), GoogleUser.class);
+
         httpSession.setAttribute("hahahaha", "hohohoho");
     }
 }

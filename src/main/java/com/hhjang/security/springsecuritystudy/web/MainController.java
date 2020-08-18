@@ -22,4 +22,9 @@ public class MainController {
             .asIterator()
                 .forEachRemaining(s -> log.info("value : {}", s));
     }
+
+    @GetMapping(value = "/test/test")
+    public String getTest() {
+        return "test/test";
+    }
 }

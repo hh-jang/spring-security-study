@@ -1,4 +1,4 @@
-package com.hhjang.security.springsecuritystudy.config;
+package com.hhjang.security.springsecuritystudy.config.auth;
 
 import org.springframework.context.annotation.Configuration;
 

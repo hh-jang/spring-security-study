@@ -1,9 +1,8 @@
-package com.hhjang.security.springsecuritystudy.config;
+package com.hhjang.security.springsecuritystudy.config.auth;
 
 import com.hhjang.security.springsecuritystudy.config.handler.GoogleAuthenticationSuccessHandler;
-import com.hhjang.security.springsecuritystudy.domain.user.UserService;
+import com.hhjang.security.springsecuritystudy.domain.user.Role;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -22,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/test/**").permitAll()
-                .antMatchers("/api/v1/**").hasRole("nameMatch")
+                .antMatchers("/api/v1/**").hasRole(Role.USER.name())
                 .anyRequest().authenticated()
                 .and()
                     .logout()

@@ -7,8 +7,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder
 public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,10 +15,22 @@ public class User {
 
     private String email;
 
+    private String picture;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    public User(String name) {
+    @Builder
+    public User(String name, String email, String picture, Role role) {
         this.name = name;
+        this.email = email;
+        this.picture = picture;
+        this.role = role;
+    }
+
+    public User update(String email, String picture) {
+        this.email = email;
+        this.picture = picture;
+        return this;
     }
 }

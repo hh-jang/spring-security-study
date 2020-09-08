@@ -13,7 +13,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final GoogleAuthenticationSuccessHandler successHandler;
     private final UserService userService;
 
     @Override

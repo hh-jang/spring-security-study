@@ -39,11 +39,13 @@ public class OAuthAttributes {
     }
 
     private static OAuthAttributes ofNaver(String attributeKey, Map<String, Object> attribute) {
+        // naver는 response 내부에 담겨 온다
+        Map<String, Object> response = (Map<String, Object>)attribute.get("response");
         return OAuthAttributes.builder()
-                .name((String) attribute.get("name"))
-                .email((String) attribute.get("email"))
-                .picture((String) attribute.get("picture"))
-                .attribute(attribute)
+                .name((String) response.get("name"))
+                .email((String) response.get("email"))
+                .picture((String) response.get("profile_image"))
+                .attribute(response)
                 .attributeKey(attributeKey)
                 .build();
     }

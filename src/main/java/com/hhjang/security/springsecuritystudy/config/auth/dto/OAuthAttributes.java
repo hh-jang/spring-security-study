@@ -33,7 +33,7 @@ public class OAuthAttributes {
 
         switch (oAuthPlatform) {
             case GOOGLE: return ofGoogle(attributeKey, attribute);
-            case NAVER: return ofNaver(attributeKey, attribute);
+            case NAVER: return ofNaver("id", attribute);
             default: throw new RuntimeException("not surpported operation");
         }
     }

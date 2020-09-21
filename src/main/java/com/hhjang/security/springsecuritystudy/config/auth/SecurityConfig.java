@@ -1,6 +1,5 @@
 package com.hhjang.security.springsecuritystudy.config.auth;
 
-import com.hhjang.security.springsecuritystudy.config.handler.GoogleAuthenticationSuccessHandler;
 import com.hhjang.security.springsecuritystudy.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
